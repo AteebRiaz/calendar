@@ -1,73 +1,119 @@
-.calendar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
-  }
-   
-  .event-list {
-    flex: 1;
-    margin-left: 20px;
-  }
-  
-  .add-event-form {
-    margin-top: 20px;
-  }
-  
-  .calendar-cell {
-    border: 1px solid #ccc;
-    padding: 20px 50px 75px 50px;
-    cursor: pointer;
-    text-align: center;
-    position: relative;
-  }
-  .day-label {
-    text-align: center;
-    font-weight: bold;
-  }
-  .date {
-    font-weight: bold;
-  }
-  .calendar-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
-  
-  .calendar-section,
-  .event-section {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
-  }
-  .event-previews {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-  
-  .event-previews li {
-    background-color: #f0f0f0;
-    padding: 2px;
-    margin: 2px;
-    font-size: 12px;
-  }
-  h1 {
-    text-align: center;
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
-  /* Add more specific styles as needed */
-  
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calendar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.calendar-section,
+.event-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.event-list {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.add-event-form {
+  margin-top: 20px;
+}
+
+.calendar-cell {
+  border: 1px solid #ccc;
+  padding: 20px 50px 75px 50px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-labels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px; /* Add margin to separate day labels from calendar cells */
+}
+
+.day-label {
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.event-previews {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.event-previews li {
+  background-color: #f0f0f0;
+  padding: 2px;
+  margin: 2px;
+  font-size: 12px;
+}
+
+h1 {
+  text-align: center;
+}
+/* ... */
+
+.month-year {
+  display: flex;
+  align-items: center;
+}
+
+.month-year h2 {
+  margin: 0;
+  flex-grow: 1; /* Allows the month and year to take available space */
+  text-align: center; /* Center the text within the available space */
+}
+
+.month-year button {
+  font-size: 16px;
+  margin: 0;
+  cursor: pointer;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+.empty-cell {
+  border: none; /* or any other styling to hide the empty cell */
+}
+/* ... */
+
