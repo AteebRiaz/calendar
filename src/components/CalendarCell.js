@@ -1,9 +1,15 @@
+// CalendarCell.js
+
 import React from 'react';
 
-const CalendarCell = ({ date, onClick, eventPreviews }) => {
+const CalendarCell = ({ date, onClick, eventPreviews, isSelected }) => {
+  const handleClick = () => {
+    onClick(date);
+  };
+
   return (
-    <div className="calendar-cell" onClick={onClick}>
-      <div className="date">{date}</div>
+    <div className={`calendar-cell ${isSelected ? 'selected-date' : ''}`} onClick={handleClick}>
+      <div className={`date ${isSelected ? 'selected-date-text' : ''}`}>{date}</div>
       <ul className="event-previews">
         {eventPreviews.map((event, index) => (
           <li key={index}>

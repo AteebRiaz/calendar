@@ -30,6 +30,7 @@ body {
 }
 
 .event-list {
+  height: 500px;
   flex: 1;
   margin-left: 20px;
 }
@@ -117,3 +118,15 @@ h1 {
 }
 /* ... */
 
+/* Add this to your existing CSS file */
+
+/* Add this to your existing CSS file */
+
+.selected-date {
+  background-color:white;
+}
+
+.selected-date-text {
+  background-color: lightgreen; /* Optionally change the text color for better visibility */
+  border-radius: 40px;
+}

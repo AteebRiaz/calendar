@@ -1,3 +1,5 @@
+// Calendar.js
+
 import React, { useState } from 'react';
 import CalendarCell from './CalendarCell';
 import EventList from './EventList';
@@ -38,7 +40,7 @@ const Calendar = () => {
     const daysInMonth = getDaysInMonth(currentMonth, currentYear);
     const currentDate = new Date(currentYear, currentMonth - 1, 1);
     const startingDay = currentDate.getDay() || 7; // Adjust to start from Monday (1)
-  
+
     return (
       <div className="calendar">
         {Array.from({ length: daysInMonth + startingDay - 1 }).map((_, index) => {
@@ -47,8 +49,9 @@ const Calendar = () => {
             <CalendarCell
               key={index}
               date={day}
-              onClick={() => handleDateClick(day)}
+              onClick={handleDateClick}
               eventPreviews={getEventPreviews(day)}
+              isSelected={selectedDate === day}
             />
           ) : (
             <div key={index} className="empty-cell" />
@@ -57,8 +60,6 @@ const Calendar = () => {
       </div>
     );
   };
-  
-  
 
   const handleNextMonth = () => {
     setCurrentMonth((prevMonth) => (prevMonth % 12) + 1);
