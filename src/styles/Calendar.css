@@ -31,6 +31,7 @@ body {
 
 .event-list {
   height: 500px;
+  overflow-y: auto;
   flex: 1;
   margin-left: 20px;
 }
