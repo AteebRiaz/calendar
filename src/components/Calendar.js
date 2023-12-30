@@ -8,6 +8,7 @@ import '../styles/Calendar.css';
 
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
+  const [showImage, setShowImage] = useState(false);
   const [events, setEvents] = useState([]);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -17,8 +18,17 @@ const Calendar = () => {
   };
 
   const handleDateClick = (date) => {
-    setSelectedDate(date);
+    const eventsForDate = events.filter((event) => event.date === date);
+  
+    if (eventsForDate.length > 0) {
+      setSelectedDate(date);
+      setShowImage(false);
+    } else {
+      setSelectedDate(date);
+      setShowImage(true);
+    }
   };
+  
 
   const handleAddEvent = (eventDetails) => {
     setEvents([...events, { date: selectedDate, ...eventDetails }]);
