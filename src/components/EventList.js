@@ -9,7 +9,7 @@ const EventList = ({ selectedDate, events }) => {
     <div className="event-list">
       <h2>Event at: {selectedDate}</h2>
       {filteredEvents.length === 0 ? (
-        <div>
+        <div className='imagecenter'>
          <img src={noEventsImage} alt="No events image" />
         <p>No events for the selected date.</p>
         </div>

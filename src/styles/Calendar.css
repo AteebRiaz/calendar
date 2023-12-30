@@ -136,3 +136,7 @@ h1 {
   color: red;
   margin-top: 5px;
 }
+.imagecenter{
+  margin: 150px 0px;
+  text-align: center;
+}
